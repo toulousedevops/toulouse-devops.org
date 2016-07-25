@@ -75,13 +75,23 @@
     <section id="news" class="news">
         <div class="container">
 
-{% for article in articles_page.object_list %}
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-9">
+{% for article in articles_page.object_list %}
                 <h2><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
             {{ article.content }}
 {% endfor %}
             </div>
+
+        <!-- sidebar -->
+        <div class="col-lg-3 sidebar-offcanvas" id="sidebar" role="navigation">
+
+            <div class="latest-tweet">
+                <a class="twitter-timeline" data-height="750" href="https://twitter.com/toulousedevops">Tweets by Toulouse DevOps</a>
+                <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+
+        </div>
          </div>
 
         </div>

@@ -21,6 +21,10 @@ SOCIAL = (('You can add links in your config file', '#'),
 
 DEFAULT_PAGINATION = False
 
+PLUGINS = [
+    'pelican_youtube',
+]
+
 THEME='theme'
 
 STATIC_PATHS = ['theme', 'images', 'robots.txt', 'CNAME']
