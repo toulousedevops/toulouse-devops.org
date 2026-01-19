@@ -1,0 +1,143 @@
+---
+interface Talk {
+  title: string;
+  speaker: string;
+  duration: number;
+}
+
+interface Location {
+  name: string;
+  address: string;
+  city: string;
+}
+
+interface Props {
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+  endDate: string;
+  location: Location;
+  talks: Talk[];
+  tags: string[];
+  meetupUrl: string;
+  status: 'upcoming' | 'past';
+  featured?: boolean;
+}
+
+const { title, description, date, location, talks, tags, meetupUrl, status, featured = false } = Astro.props;
+
+const eventDate = new Date(date);
+const formattedDate = eventDate.toLocaleDateString('fr-FR', {
+  weekday: 'long',
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric'
+});
+const formattedTime = eventDate.toLocaleTimeString('fr-FR', {
+  hour: '2-digit',
+  minute: '2-digit'
+});
+
+const isUpcoming = status === 'upcoming';
+---
+
+<article
+  class:list={[
+    'bg-white rounded-xl overflow-hidden transition-shadow',
+    featured ? 'shadow-lg hover:shadow-xl ring-2 ring-accent' : 'shadow-card hover:shadow-card-hover',
+  ]}
+>
+  {featured && (
+    <div class="bg-accent text-white px-4 py-2 text-sm font-medium flex items-center gap-2">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+      </svg>
+      Prochain événement
+    </div>
+  )}
+
+  <div class="p-6">
+    <!-- Date & Status -->
+    <div class="flex items-center gap-3 mb-4">
+      <div class:list={[
+        'px-3 py-1 rounded-full text-sm font-medium',
+        isUpcoming ? 'bg-accent-pale text-accent' : 'bg-primary-pale text-primary'
+      ]}>
+        {isUpcoming ? 'À venir' : 'Passé'}
+      </div>
+      <time datetime={date} class="text-text-light text-sm">
+        {formattedDate}
+      </time>
+    </div>
+
+    <!-- Title -->
+    <h3 class="text-xl font-heading font-bold text-primary mb-2">
+      {title}
+    </h3>
+
+    <!-- Description -->
+    <p class="text-text-light mb-4 line-clamp-2">
+      {description}
+    </p>
+
+    <!-- Info -->
+    <div class="space-y-2 mb-4">
+      <div class="flex items-center gap-2 text-sm text-text">
+        <svg class="w-4 h-4 text-text-light flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>{formattedTime}</span>
+      </div>
+      <div class="flex items-start gap-2 text-sm text-text">
+        <svg class="w-4 h-4 text-text-light flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        <span>{location.name}</span>
+      </div>
+    </div>
+
+    <!-- Talks preview -->
+    {talks.length > 0 && (
+      <div class="border-t border-gray-100 pt-4 mb-4">
+        <h4 class="text-sm font-medium text-text mb-2">Au programme :</h4>
+        <ul class="space-y-1">
+          {talks.map((talk) => (
+            <li class="text-sm text-text-light flex items-start gap-2">
+              <span class="text-accent">•</span>
+              <span>{talk.title}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    <!-- Tags -->
+    <div class="flex flex-wrap gap-2 mb-4">
+      {tags.map((tag) => (
+        <span class="bg-primary-pale text-primary text-xs px-2 py-1 rounded-md">
+          {tag}
+        </span>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <a
+      href={meetupUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class:list={[
+        'inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-lg font-medium transition-colors',
+        isUpcoming
+          ? 'bg-accent text-white hover:bg-accent-light'
+          : 'bg-primary-pale text-primary hover:bg-primary hover:text-white'
+      ]}
+    >
+      {isUpcoming ? "S'inscrire" : 'Voir le récap'}
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      </svg>
+    </a>
+  </div>
+</article>

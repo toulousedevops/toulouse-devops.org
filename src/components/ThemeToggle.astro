@@ -1,0 +1,208 @@
+---
+// Theme toggle component with light/dark/system options
+---
+
+<div class="relative" data-theme-toggle>
+  <button
+    type="button"
+    class="p-2 rounded-lg text-text-light hover:text-primary hover:bg-primary-pale transition-colors"
+    aria-label="Changer le thème"
+    aria-haspopup="true"
+    aria-expanded="false"
+    data-theme-button
+  >
+    <!-- Sun icon (light) -->
+    <svg class="w-5 h-5 hidden" data-theme-icon="light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+    <!-- Moon icon (dark) -->
+    <svg class="w-5 h-5 hidden" data-theme-icon="dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>
+    <!-- System icon -->
+    <svg class="w-5 h-5 hidden" data-theme-icon="system" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>
+  </button>
+
+  <!-- Dropdown menu -->
+  <div
+    class="absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-lg border border-border py-1 hidden z-50"
+    data-theme-menu
+    role="menu"
+  >
+    <button
+      type="button"
+      class="w-full px-4 py-2 text-left text-sm text-text hover:bg-primary-pale flex items-center gap-3 transition-colors"
+      data-theme-option="light"
+      role="menuitem"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+      <span>Clair</span>
+      <svg class="w-4 h-4 ml-auto hidden" data-check="light" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+      </svg>
+    </button>
+    <button
+      type="button"
+      class="w-full px-4 py-2 text-left text-sm text-text hover:bg-primary-pale flex items-center gap-3 transition-colors"
+      data-theme-option="dark"
+      role="menuitem"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+      </svg>
+      <span>Sombre</span>
+      <svg class="w-4 h-4 ml-auto hidden" data-check="dark" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+      </svg>
+    </button>
+    <button
+      type="button"
+      class="w-full px-4 py-2 text-left text-sm text-text hover:bg-primary-pale flex items-center gap-3 transition-colors"
+      data-theme-option="system"
+      role="menuitem"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+      <span>Système</span>
+      <svg class="w-4 h-4 ml-auto hidden" data-check="system" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  type Theme = 'light' | 'dark' | 'system';
+
+  function getStoredTheme(): Theme {
+    if (typeof localStorage !== 'undefined') {
+      const stored = localStorage.getItem('theme');
+      if (stored === 'light' || stored === 'dark' || stored === 'system') {
+        return stored;
+      }
+    }
+    return 'system';
+  }
+
+  function getSystemTheme(): 'light' | 'dark' {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function getEffectiveTheme(theme: Theme): 'light' | 'dark' {
+    return theme === 'system' ? getSystemTheme() : theme;
+  }
+
+  function applyTheme(theme: Theme) {
+    const root = document.documentElement;
+    const effective = getEffectiveTheme(theme);
+
+    // Remove existing theme classes
+    root.classList.remove('light', 'dark');
+
+    // Apply theme class only if not system (system uses media query)
+    if (theme !== 'system') {
+      root.classList.add(theme);
+    }
+
+    // Update icons
+    document.querySelectorAll('[data-theme-icon]').forEach((icon) => {
+      const iconTheme = (icon as HTMLElement).dataset.themeIcon;
+      const displayTheme = theme === 'system' ? 'system' : effective;
+      icon.classList.toggle('hidden', iconTheme !== displayTheme);
+    });
+
+    // Update checkmarks
+    document.querySelectorAll('[data-check]').forEach((check) => {
+      const checkTheme = (check as HTMLElement).dataset.check;
+      check.classList.toggle('hidden', checkTheme !== theme);
+    });
+
+    // Store preference
+    localStorage.setItem('theme', theme);
+  }
+
+  function initThemeToggle() {
+    const toggle = document.querySelector('[data-theme-toggle]');
+    const button = document.querySelector('[data-theme-button]');
+    const menu = document.querySelector('[data-theme-menu]');
+    const options = document.querySelectorAll('[data-theme-option]');
+
+    if (!toggle || !button || !menu) return;
+
+    // Apply stored theme on load
+    const storedTheme = getStoredTheme();
+    applyTheme(storedTheme);
+
+    // Toggle menu
+    button.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      button.setAttribute('aria-expanded', (!isOpen).toString());
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!toggle.contains(e.target as Node)) {
+        menu.classList.add('hidden');
+        button.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Handle theme selection
+    options.forEach((option) => {
+      option.addEventListener('click', () => {
+        const theme = (option as HTMLElement).dataset.themeOption as Theme;
+        applyTheme(theme);
+        menu.classList.add('hidden');
+        button.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      const currentTheme = getStoredTheme();
+      if (currentTheme === 'system') {
+        applyTheme('system');
+      }
+    });
+
+    // Keyboard navigation
+    button.addEventListener('keydown', (event) => {
+      const e = event as KeyboardEvent;
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        menu.classList.toggle('hidden');
+      }
+    });
+
+    options.forEach((option, index) => {
+      option.addEventListener('keydown', (event) => {
+        const e = event as KeyboardEvent;
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          const next = options[index + 1] || options[0];
+          (next as HTMLElement).focus();
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          const prev = options[index - 1] || options[options.length - 1];
+          (prev as HTMLElement).focus();
+        } else if (e.key === 'Escape') {
+          menu.classList.add('hidden');
+          button.setAttribute('aria-expanded', 'false');
+          (button as HTMLElement).focus();
+        }
+      });
+    });
+  }
+
+  // Init on page load
+  initThemeToggle();
+
+  // Re-init on Astro page navigation
+  document.addEventListener('astro:page-load', initThemeToggle);
+</script>

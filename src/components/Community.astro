@@ -1,0 +1,69 @@
+---
+import SocialIcon from './SocialIcon.astro';
+import siteData from '../data/site.json';
+
+const socialLinks = Object.values(siteData.social);
+---
+
+<section id="community" class="py-20 bg-primary text-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <!-- Section header -->
+    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">
+      Rejoignez la communauté
+    </h2>
+    <p class="text-primary-pale text-lg max-w-2xl mx-auto mb-12">
+      Restez informé de nos prochains événements, partagez vos retours d'expérience
+      et connectez-vous avec d'autres passionnés de DevOps à Toulouse.
+    </p>
+
+    <!-- Social links -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 max-w-4xl mx-auto">
+      {socialLinks.map((social) => (
+        <a
+          href={social.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex flex-col items-center gap-3 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors group"
+        >
+          <div class="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 group-hover:bg-white group-hover:text-primary transition-colors">
+            <SocialIcon name={social.icon} class="w-6 h-6" />
+          </div>
+          <span class="text-sm font-medium">{social.name}</span>
+        </a>
+      ))}
+    </div>
+
+    <!-- Newsletter or Meetup CTA -->
+    <div class="mt-16 p-8 bg-white/10 rounded-2xl max-w-2xl mx-auto">
+      <h3 class="text-xl font-heading font-bold mb-3">
+        Ne manquez aucun meetup !
+      </h3>
+      <p class="text-primary-pale mb-6">
+        Inscrivez-vous sur Meetup pour être notifié de nos prochains événements.
+        C'est gratuit et sans engagement.
+      </p>
+      <a
+        href={siteData.social.meetup.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 bg-accent text-white px-8 py-3 rounded-lg font-medium hover:bg-accent-light transition-colors text-lg"
+      >
+        <SocialIcon name="meetup" class="w-5 h-5" />
+        S'inscrire sur Meetup
+      </a>
+    </div>
+
+    <!-- Call for speakers -->
+    <div class="mt-8">
+      <p class="text-primary-pale">
+        Tu veux présenter un talk ?
+        <a
+          href="mailto:contact@toulouse-devops.org?subject=Proposition de talk"
+          class="text-white underline hover:no-underline"
+        >
+          Contacte-nous !
+        </a>
+      </p>
+    </div>
+  </div>
+</section>

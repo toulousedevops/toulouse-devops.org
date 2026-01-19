@@ -1,0 +1,85 @@
+{
+  "events": [
+    {
+      "id": "meetup-42",
+      "title": "Meetup #42 - Platform Engineering & GitOps",
+      "description": "Deux talks passionnants sur le Platform Engineering et les bonnes pratiques GitOps avec ArgoCD.",
+      "date": "2026-02-20T19:00:00+01:00",
+      "endDate": "2026-02-20T22:00:00+01:00",
+      "location": {
+        "name": "Epitech Toulouse",
+        "address": "40 Boulevard de la Marquette, 31000 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        {
+          "title": "Platform Engineering : construire une Internal Developer Platform",
+          "speaker": "Marie Dupont",
+          "duration": 45
+        },
+        {
+          "title": "GitOps en production avec ArgoCD",
+          "speaker": "Thomas Martin",
+          "duration": 30
+        }
+      ],
+      "tags": ["platform-engineering", "gitops", "kubernetes"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/123456789",
+      "status": "upcoming"
+    },
+    {
+      "id": "meetup-41",
+      "title": "Meetup #41 - Observabilité & OpenTelemetry",
+      "description": "Soirée dédiée à l'observabilité moderne avec OpenTelemetry et les bonnes pratiques de monitoring.",
+      "date": "2026-01-16T19:00:00+01:00",
+      "endDate": "2026-01-16T22:00:00+01:00",
+      "location": {
+        "name": "La Cantine Toulouse",
+        "address": "27 Rue d'Aubuisson, 31000 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        {
+          "title": "OpenTelemetry : le futur de l'observabilité",
+          "speaker": "Julie Bernard",
+          "duration": 45
+        },
+        {
+          "title": "REX : Mise en place d'une stack d'observabilité chez OVHcloud",
+          "speaker": "Pierre Lefebvre",
+          "duration": 30
+        }
+      ],
+      "tags": ["observability", "opentelemetry", "monitoring"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/123456788",
+      "status": "past"
+    },
+    {
+      "id": "meetup-40",
+      "title": "Meetup #40 - Kubernetes Security",
+      "description": "Focus sécurité avec des talks sur le hardening Kubernetes et les politiques réseau.",
+      "date": "2025-12-12T19:00:00+01:00",
+      "endDate": "2025-12-12T22:00:00+01:00",
+      "location": {
+        "name": "Airbus Defence & Space",
+        "address": "31 Rue des Cosmonautes, 31400 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        {
+          "title": "Sécuriser son cluster Kubernetes : les fondamentaux",
+          "speaker": "Nicolas Rousseau",
+          "duration": 45
+        },
+        {
+          "title": "Network Policies et Service Mesh : mieux contrôler le trafic",
+          "speaker": "Sophie Garnier",
+          "duration": 30
+        }
+      ],
+      "tags": ["kubernetes", "security", "networking"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/123456787",
+      "status": "past"
+    }
+  ]
+}

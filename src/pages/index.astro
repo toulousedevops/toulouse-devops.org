@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Events from '../components/Events.astro';
+import Sponsors from '../components/Sponsors.astro';
+import About from '../components/About.astro';
+import Community from '../components/Community.astro';
+import siteData from '../data/site.json';
+---
+
+<BaseLayout
+  title={siteData.name}
+  description={siteData.tagline}
+>
+  <Hero />
+  <Events />
+  <Sponsors />
+  <About />
+  <Community />
+</BaseLayout>

@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Mentions légales"
+  description="Mentions légales du site Toulouse DevOps"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <h1 class="text-3xl md:text-4xl font-heading font-bold text-primary mb-8">
+      Mentions légales
+    </h1>
+
+    <div class="prose prose-lg max-w-none">
+      <h2>Éditeur du site</h2>
+      <p>
+        Le site toulouse-devops.org est édité par l'association Toulouse DevOps.
+      </p>
+      <ul>
+        <li><strong>Association :</strong> Toulouse DevOps</li>
+        <li><strong>Siège social :</strong> Toulouse, France</li>
+        <li><strong>Email :</strong> contact@toulouse-devops.org</li>
+      </ul>
+
+      <h2>Hébergement</h2>
+      <p>
+        Ce site est hébergé par [Nom de l'hébergeur].
+      </p>
+
+      <h2>Propriété intellectuelle</h2>
+      <p>
+        L'ensemble des contenus présents sur ce site (textes, images, logos)
+        sont la propriété de Toulouse DevOps ou de leurs auteurs respectifs.
+        Toute reproduction sans autorisation préalable est interdite.
+      </p>
+
+      <h2>Données personnelles</h2>
+      <p>
+        Ce site ne collecte aucune donnée personnelle. Les inscriptions aux
+        événements sont gérées par la plateforme Meetup.com, qui dispose de
+        sa propre politique de confidentialité.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        Ce site n'utilise pas de cookies de tracking. Seuls des cookies
+        techniques essentiels au fonctionnement du site peuvent être utilisés.
+      </p>
+    </div>
+
+    <div class="mt-12">
+      <a
+        href="/"
+        class="inline-flex items-center gap-2 text-primary hover:text-primary-light font-medium transition-colors"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Retour à l'accueil
+      </a>
+    </div>
+  </div>
+</BaseLayout>

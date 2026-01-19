@@ -1,0 +1,81 @@
+---
+import EventCard from './EventCard.astro';
+import eventsData from '../data/events.json';
+import siteData from '../data/site.json';
+import type { Event } from '../types/events';
+
+// Cast and sort events by date
+const sortedEvents = (eventsData.events as Event[]).sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
+
+// Get upcoming and past events
+const upcomingEvents = sortedEvents.filter(e => e.status === 'upcoming');
+const pastEvents = sortedEvents.filter(e => e.status === 'past');
+
+// Featured event (next upcoming) and other events to display
+const featuredEvent = upcomingEvents[0];
+const displayedPastEvents = pastEvents.slice(0, 2);
+---
+
+<section id="events" class="py-20 bg-background">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">
+        Nos événements
+      </h2>
+      <p class="text-text-light text-lg max-w-2xl mx-auto">
+        Retrouvez-nous chaque mois pour des talks techniques, du networking et une bonne dose de convivialité.
+        Spoiler : il y a toujours des pizzas 🍕
+      </p>
+    </div>
+
+    <!-- Featured event -->
+    {featuredEvent && (
+      <div class="mb-12">
+        <h3 class="text-xl font-heading font-bold text-primary mb-6 flex items-center gap-2">
+          <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          Prochain meetup
+        </h3>
+        <div class="max-w-2xl">
+          <EventCard {...featuredEvent} featured={true} />
+        </div>
+      </div>
+    )}
+
+    <!-- Past events -->
+    {displayedPastEvents.length > 0 && (
+      <div>
+        <h3 class="text-xl font-heading font-bold text-primary mb-6 flex items-center gap-2">
+          <svg class="w-6 h-6 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Événements passés
+        </h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          {displayedPastEvents.map((event) => (
+            <EventCard {...event} />
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- CTA to see all events -->
+    <div class="text-center mt-12">
+      <a
+        href={siteData.social.meetup.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-primary hover:text-primary-light font-medium transition-colors"
+      >
+        Voir tous nos événements sur Meetup
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+{
+  "sponsors": [
+    {
+      "name": "Sponsor A",
+      "logo": "/static/img/sponsors/sponsor-a.svg",
+      "url": "https://example.com/sponsor-a",
+      "tier": "gold"
+    },
+    {
+      "name": "Sponsor B",
+      "logo": "/static/img/sponsors/sponsor-b.svg",
+      "url": "https://example.com/sponsor-b",
+      "tier": "gold"
+    },
+    {
+      "name": "Sponsor C",
+      "logo": "/static/img/sponsors/sponsor-c.svg",
+      "url": "https://example.com/sponsor-c",
+      "tier": "silver"
+    },
+    {
+      "name": "Sponsor D",
+      "logo": "/static/img/sponsors/sponsor-d.svg",
+      "url": "https://example.com/sponsor-d",
+      "tier": "silver"
+    }
+  ]
+}

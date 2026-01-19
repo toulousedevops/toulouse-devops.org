@@ -1,0 +1,85 @@
+---
+const features = [
+  {
+    icon: 'microphone',
+    title: 'Talks techniques',
+    description: '1-2 présentations de 30-45min par meetup, données par des passionnés de la communauté.',
+  },
+  {
+    icon: 'users',
+    title: 'Networking',
+    description: 'Un moment convivial pour échanger avec d\'autres devs, ops et SREs de la région.',
+  },
+  {
+    icon: 'code',
+    title: 'Sujets variés',
+    description: 'Kubernetes, CI/CD, observabilité, platform engineering, IaC, SRE et bien plus.',
+  },
+  {
+    icon: 'heart',
+    title: 'Gratuit & ouvert',
+    description: 'Nos meetups sont gratuits et ouverts à tous, débutants comme experts.',
+  },
+];
+---
+
+<section id="about" class="py-20 bg-background">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Content -->
+      <div>
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-primary mb-6">
+          À propos de nous
+        </h2>
+        <div class="prose prose-lg text-text">
+          <p>
+            <strong>Toulouse DevOps</strong> rassemble les passionnés d'infrastructure,
+            d'automatisation et de culture DevOps dans la Ville Rose.
+          </p>
+          <p>
+            Nous organisons des meetups gratuits avec des talks techniques,
+            des retours d'expérience et du networking. Que tu sois dev, ops,
+            SRE ou simplement curieux, <strong>tu es le bienvenu !</strong>
+          </p>
+          <p class="text-text-light">
+            L'ambiance ? Professionnelle mais décontractée. On parle tech sérieusement,
+            mais autour d'une boisson et de pizzas. Parce que le DevOps, c'est aussi
+            une histoire de communauté et de partage. 🤝
+          </p>
+        </div>
+      </div>
+
+      <!-- Features grid -->
+      <div class="grid sm:grid-cols-2 gap-6">
+        {features.map((feature) => (
+          <div class="bg-white p-6 rounded-xl shadow-card">
+            <div class="w-12 h-12 bg-primary-pale rounded-lg flex items-center justify-center mb-4">
+              {feature.icon === 'microphone' && (
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                </svg>
+              )}
+              {feature.icon === 'users' && (
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              )}
+              {feature.icon === 'code' && (
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              )}
+              {feature.icon === 'heart' && (
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              )}
+            </div>
+            <h3 class="font-heading font-bold text-primary mb-2">{feature.title}</h3>
+            <p class="text-text-light text-sm">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

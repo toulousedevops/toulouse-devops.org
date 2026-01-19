@@ -1,0 +1,33 @@
+{
+  "name": "toulouse-devops",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Site web de la communauté Toulouse DevOps",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "generate-assets": "node scripts/generate-assets.mjs"
+  },
+  "keywords": [
+    "toulouse",
+    "devops",
+    "meetup",
+    "astro"
+  ],
+  "author": "Toulouse DevOps",
+  "license": "MIT",
+  "dependencies": {
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/sitemap": "^3.7.0",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.16.11",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
+  }
+}

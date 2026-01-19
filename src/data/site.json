@@ -1,0 +1,38 @@
+{
+  "name": "Toulouse DevOps",
+  "tagline": "La communauté DevOps de Toulouse — Meetups, talks et partage de bonnes pratiques",
+  "description": "Toulouse DevOps rassemble les passionnés d'infrastructure, d'automatisation et de culture DevOps dans la Ville Rose.",
+  "url": "https://toulouse-devops.org",
+  "social": {
+    "meetup": {
+      "name": "Meetup",
+      "url": "https://www.meetup.com/fr-FR/Toulouse-DevOps/",
+      "icon": "meetup"
+    },
+    "twitter": {
+      "name": "X / Twitter",
+      "url": "https://x.com/toulousedevops",
+      "icon": "twitter"
+    },
+    "bluesky": {
+      "name": "Bluesky",
+      "url": "https://bsky.app/profile/toulouse-devops.org",
+      "icon": "bluesky"
+    },
+    "instagram": {
+      "name": "Instagram",
+      "url": "https://instagram.com/toulouse-devops",
+      "icon": "instagram"
+    },
+    "linkedin": {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com/company/toulouse-devops",
+      "icon": "linkedin"
+    },
+    "github": {
+      "name": "GitHub",
+      "url": "https://github.com/toulousedevops",
+      "icon": "github"
+    }
+  }
+}

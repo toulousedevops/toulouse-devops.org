@@ -1,0 +1,177 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import siteData from '../data/site.json';
+import eventsData from '../data/events.json';
+import type { Event } from '../types/events';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+}
+
+const {
+  title = siteData.name,
+  description = siteData.description,
+  image = '/static/img/og-image.png',
+  type = 'website'
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const fullTitle = title === siteData.name ? title : `${title} | ${siteData.name}`;
+const imageURL = new URL(image, Astro.site).toString();
+
+// JSON-LD: Organization
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": siteData.name,
+  "description": siteData.description,
+  "url": siteData.url,
+  "logo": new URL('/static/img/logo-toulouse-devops.png', Astro.site).toString(),
+  "sameAs": [
+    siteData.social.meetup.url,
+    siteData.social.twitter.url,
+    siteData.social.linkedin.url,
+    siteData.social.github.url,
+    siteData.social.instagram.url,
+    siteData.social.bluesky.url
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Toulouse",
+    "addressCountry": "FR"
+  }
+};
+
+// JSON-LD: WebSite avec SearchAction
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": siteData.name,
+  "url": siteData.url,
+  "description": siteData.tagline,
+  "publisher": {
+    "@type": "Organization",
+    "name": siteData.name
+  }
+};
+
+// JSON-LD: Events (upcoming)
+const upcomingEvents = (eventsData.events as Event[])
+  .filter(e => e.status === 'upcoming')
+  .slice(0, 3);
+
+const eventsSchema = upcomingEvents.map(event => ({
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": event.title,
+  "description": event.description,
+  "startDate": event.date,
+  "endDate": event.endDate,
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": event.location.name,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": event.location.address,
+      "addressLocality": event.location.city,
+      "addressCountry": "FR"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": siteData.name,
+    "url": siteData.url
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "url": event.meetupUrl
+  },
+  "image": imageURL
+}));
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content={siteData.name} />
+    <meta name="keywords" content="DevOps, Toulouse, Meetup, Kubernetes, CI/CD, Infrastructure, Cloud, SRE, Platform Engineering, IaC" />
+    <meta name="geo.region" content="FR-31" />
+    <meta name="geo.placename" content="Toulouse" />
+    <link rel="alternate" hreflang="fr" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${siteData.name} - ${siteData.tagline}`} />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content={siteData.name} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@toulousedevops" />
+    <meta name="twitter:creator" content="@toulousedevops" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageURL} />
+    <meta name="twitter:image:alt" content={`${siteData.name} - ${siteData.tagline}`} />
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#0e2d5a" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a1f3d" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- JSON-LD Structured Data -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    {eventsSchema.map(event => (
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(event)} />
+    ))}
+
+    <!-- Theme initialization (prevent FOUC) -->
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'light' || theme === 'dark') {
+          document.documentElement.classList.add(theme);
+        }
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <Header />
+    <main id="main-content" class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

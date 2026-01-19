@@ -1,0 +1,67 @@
+---
+import sponsorsData from '../data/sponsors.json';
+
+const { sponsors } = sponsorsData;
+---
+
+<section id="sponsors" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">
+        Nos sponsors
+      </h2>
+      <p class="text-text-light text-lg max-w-2xl mx-auto">
+        Merci à nos partenaires qui rendent nos meetups possibles.
+        Grâce à eux, on peut vous offrir des talks de qualité... et des pizzas 🍕
+      </p>
+    </div>
+
+    <!-- Sponsors grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      {sponsors.map((sponsor) => (
+        <a
+          href={sponsor.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center justify-center p-6 bg-background rounded-xl hover:shadow-card transition-all"
+        >
+          <!-- Placeholder for sponsor logo -->
+          <div class="w-full h-16 flex items-center justify-center bg-primary-pale rounded-lg text-primary font-heading font-medium group-hover:bg-primary group-hover:text-white transition-colors">
+            {sponsor.name}
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Become sponsor CTA -->
+    <div class="mt-12 text-center">
+      <div class="inline-flex flex-col sm:flex-row items-center gap-4 p-6 bg-primary-pale rounded-xl">
+        <div class="text-left">
+          <h3 class="font-heading font-bold text-primary">Envie de devenir sponsor ?</h3>
+          <p class="text-text-light text-sm">
+            Donnez de la visibilité à votre entreprise auprès de la communauté DevOps toulousaine.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href="/static/pdf/toulouse-devops-plaquette-sponsors.pdf"
+            download
+            class="whitespace-nowrap inline-flex items-center gap-2 bg-accent text-white px-6 py-2.5 rounded-lg font-medium hover:bg-accent-light transition-colors"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Plaquette sponsor
+          </a>
+          <a
+            href="mailto:contact@toulouse-devops.org?subject=Sponsoring Toulouse DevOps"
+            class="whitespace-nowrap bg-primary text-white px-6 py-2.5 rounded-lg font-medium hover:bg-primary-light transition-colors"
+          >
+            Nous contacter
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

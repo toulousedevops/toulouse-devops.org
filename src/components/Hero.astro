@@ -1,0 +1,85 @@
+---
+import siteData from '../data/site.json';
+---
+
+<section class="relative bg-gradient-to-br from-primary to-primary-light text-white overflow-hidden">
+  <!-- Background pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+  </div>
+
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+    <div class="flex flex-col md:flex-row items-center gap-12">
+      <!-- Content -->
+      <div class="flex-1 text-center md:text-left">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">
+          <span class="text-white [text-shadow:_0_2px_10px_rgb(0_0_0_/_50%),_0_0_30px_rgb(255_255_255_/_30%)]">Toulouse</span>
+          <span class="text-accent [text-shadow:_0_2px_10px_rgb(0_0_0_/_50%)]">DevOps</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-primary-pale mb-8 max-w-2xl">
+          {siteData.tagline}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a
+            href={siteData.social.meetup.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 bg-accent text-white px-6 py-3 rounded-lg font-medium hover:bg-accent-light transition-colors text-lg"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            Rejoindre le Meetup
+          </a>
+          <a
+            href="#events"
+            class="inline-flex items-center justify-center gap-2 bg-white/10 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/20 transition-colors text-lg border border-white/20"
+          >
+            Voir les événements
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <img
+          src="/static/img/logo-toulouse-devops.png"
+          alt="Logo Toulouse DevOps"
+          class="w-48 md:w-64 lg:w-80 h-auto drop-shadow-2xl"
+          width="320"
+          height="320"
+        />
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+        <div class="text-3xl md:text-4xl font-bold">40+</div>
+        <div class="text-primary-pale text-sm mt-1">Meetups organisés</div>
+      </div>
+      <div class="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+        <div class="text-3xl md:text-4xl font-bold">1500+</div>
+        <div class="text-primary-pale text-sm mt-1">Membres</div>
+      </div>
+      <div class="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+        <div class="text-3xl md:text-4xl font-bold">100+</div>
+        <div class="text-primary-pale text-sm mt-1">Talks</div>
+      </div>
+      <div class="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+        <div class="text-3xl md:text-4xl font-bold">🍕</div>
+        <div class="text-primary-pale text-sm mt-1">Pizzas & boissons</div>
+      </div>
+    </div>
+  </div>
+</section>

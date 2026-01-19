@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@theme {
+  /* Couleurs principales */
+  --color-primary: #0e2d5a;
+  --color-primary-light: #1a4a8a;
+  --color-primary-pale: #e8eef5;
+
+  --color-accent: #c83737;
+  --color-accent-light: #e85555;
+  --color-accent-pale: #fdf2f2;
+
+  /* Neutres */
+  --color-text: #374151;
+  --color-text-light: #6b7280;
+  --color-background: #fafbfc;
+  --color-white: #ffffff;
+  --color-surface: #ffffff;
+  --color-border: #e5e7eb;
+
+  /* Typographie */
+  --font-heading: "Ubuntu", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Border radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-card-hover: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* Dark mode colors - applied via class or media query */
+:root {
+  color-scheme: light dark;
+}
+
+/* Dark theme variables */
+.dark {
+  --color-primary: #5b8fd9;
+  --color-primary-light: #7ba7e8;
+  --color-primary-pale: #1e3a5f;
+
+  --color-accent: #e85555;
+  --color-accent-light: #f07070;
+  --color-accent-pale: #3d1f1f;
+
+  --color-text: #e5e7eb;
+  --color-text-light: #9ca3af;
+  --color-background: #0f172a;
+  --color-white: #1e293b;
+  --color-surface: #1e293b;
+  --color-border: #334155;
+
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+  --shadow-card-hover: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+}
+
+/* System preference dark mode (when no explicit theme is set) */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light):not(.dark) {
+    --color-primary: #5b8fd9;
+    --color-primary-light: #7ba7e8;
+    --color-primary-pale: #1e3a5f;
+
+    --color-accent: #e85555;
+    --color-accent-light: #f07070;
+    --color-accent-pale: #3d1f1f;
+
+    --color-text: #e5e7eb;
+    --color-text-light: #9ca3af;
+    --color-background: #0f172a;
+    --color-white: #1e293b;
+    --color-surface: #1e293b;
+    --color-border: #334155;
+
+    --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+    --shadow-card-hover: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  }
+}
+
+/* Google Fonts */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoC1CzTtw.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvTtw.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hiA.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fAZ9hiA.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/jetbrainsmono/v21/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPVmUsaaDhw.woff2") format("woff2");
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+code, pre {
+  font-family: var(--font-mono);
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}

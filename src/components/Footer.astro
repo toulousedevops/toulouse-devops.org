@@ -1,0 +1,89 @@
+---
+import siteData from '../data/site.json';
+import SocialIcon from './SocialIcon.astro';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-primary text-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- About -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img
+            src="/static/img/logo-toulouse-devops.png"
+            alt="Logo Toulouse DevOps"
+            class="h-10 w-auto"
+            width="40"
+            height="40"
+          />
+          <span class="font-heading font-bold text-xl">Toulouse DevOps</span>
+        </div>
+        <p class="text-primary-pale text-sm leading-relaxed">
+          {siteData.tagline}
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3 class="font-heading font-bold text-lg mb-4">Liens rapides</h3>
+        <ul class="space-y-2">
+          <li>
+            <a href="#events" class="text-primary-pale hover:text-white transition-colors">
+              Événements
+            </a>
+          </li>
+          <li>
+            <a href="#sponsors" class="text-primary-pale hover:text-white transition-colors">
+              Sponsors
+            </a>
+          </li>
+          <li>
+            <a href="#about" class="text-primary-pale hover:text-white transition-colors">
+              À propos
+            </a>
+          </li>
+          <li>
+            <a href="#community" class="text-primary-pale hover:text-white transition-colors">
+              Communauté
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div>
+        <h3 class="font-heading font-bold text-lg mb-4">Suivez-nous</h3>
+        <div class="flex flex-wrap gap-3">
+          {Object.values(siteData.social).map((social) => (
+            <a
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary-light hover:bg-primary-pale hover:text-primary transition-colors"
+              aria-label={social.name}
+            >
+              <SocialIcon name={social.icon} class="w-5 h-5" />
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="mt-12 pt-8 border-t border-primary-light flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-primary-pale text-sm">
+        © {currentYear} Toulouse DevOps. Fait avec ❤️ à Toulouse.
+      </p>
+      <div class="flex gap-6 text-sm">
+        <a href="/mentions-legales" class="text-primary-pale hover:text-white transition-colors">
+          Mentions légales
+        </a>
+        <a href="/code-de-conduite" class="text-primary-pale hover:text-white transition-colors">
+          Code de conduite
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

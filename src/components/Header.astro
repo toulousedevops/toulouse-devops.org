@@ -1,0 +1,109 @@
+---
+import siteData from '../data/site.json';
+import ThemeToggle from './ThemeToggle.astro';
+
+const navLinks = [
+  { href: '#events', label: 'Événements' },
+  { href: '#sponsors', label: 'Sponsors' },
+  { href: '#about', label: 'À propos' },
+  { href: '#community', label: 'Communauté' },
+];
+---
+
+<header class="bg-surface border-b border-border sticky top-0 z-50">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+        <img
+          src="/static/img/logo-toulouse-devops.png"
+          alt="Logo Toulouse DevOps"
+          class="h-10 w-auto"
+          width="40"
+          height="40"
+        />
+        <span class="font-heading font-bold text-primary text-lg hidden sm:block">
+          Toulouse DevOps
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-6">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-text-light hover:text-primary font-medium transition-colors"
+          >
+            {link.label}
+          </a>
+        ))}
+        <ThemeToggle />
+        <a
+          href={siteData.social.meetup.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-accent text-white px-4 py-2 rounded-lg font-medium hover:bg-accent-light transition-colors"
+        >
+          Rejoindre le Meetup
+        </a>
+      </div>
+
+      <!-- Mobile: Theme toggle + menu button -->
+      <div class="flex md:hidden items-center gap-2">
+        <ThemeToggle />
+        <button
+          type="button"
+          class="p-2 rounded-lg text-text-light hover:text-primary hover:bg-primary-pale transition-colors"
+          aria-label="Menu"
+          aria-expanded="false"
+          data-menu-toggle
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="hidden md:hidden pb-4" data-menu>
+      <div class="flex flex-col gap-2">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-text-light hover:text-primary font-medium py-2 px-3 rounded-lg hover:bg-primary-pale transition-colors"
+          >
+            {link.label}
+          </a>
+        ))}
+        <a
+          href={siteData.social.meetup.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-accent text-white px-4 py-2 rounded-lg font-medium hover:bg-accent-light transition-colors text-center mt-2"
+        >
+          Rejoindre le Meetup
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const menuToggle = document.querySelector('[data-menu-toggle]');
+  const menu = document.querySelector('[data-menu]');
+
+  menuToggle?.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', (!isExpanded).toString());
+    menu?.classList.toggle('hidden');
+  });
+
+  // Close menu when clicking on a link
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle?.setAttribute('aria-expanded', 'false');
+      menu?.classList.add('hidden');
+    });
+  });
+</script>
