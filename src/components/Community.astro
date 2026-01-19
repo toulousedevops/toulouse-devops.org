@@ -1,5 +1,6 @@
 ---
 import SocialIcon from './SocialIcon.astro';
+import ObfuscatedEmail from './ObfuscatedEmail.astro';
 import siteData from '../data/site.json';
 
 const socialLinks = Object.values(siteData.social);
@@ -57,12 +58,12 @@ const socialLinks = Object.values(siteData.social);
     <div class="mt-8">
       <p class="text-primary-pale">
         Tu veux présenter un talk ?
-        <a
-          href="mailto:contact@toulouse-devops.org?subject=Proposition de talk"
+        <ObfuscatedEmail
+          subject="Proposition de talk"
           class="text-white underline hover:no-underline"
         >
           Contacte-nous !
-        </a>
+        </ObfuscatedEmail>
       </p>
     </div>
   </div>

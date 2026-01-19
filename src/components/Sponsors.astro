@@ -1,5 +1,6 @@
 ---
 import sponsorsData from '../data/sponsors.json';
+import ObfuscatedEmail from './ObfuscatedEmail.astro';
 
 const { sponsors } = sponsorsData;
 ---
@@ -54,12 +55,12 @@ const { sponsors } = sponsorsData;
             </svg>
             Plaquette sponsor
           </a>
-          <a
-            href="mailto:contact@toulouse-devops.org?subject=Sponsoring Toulouse DevOps"
+          <ObfuscatedEmail
+            subject="Sponsoring Toulouse DevOps"
             class="whitespace-nowrap bg-primary text-white px-6 py-2.5 rounded-lg font-medium hover:bg-primary-light transition-colors"
           >
             Nous contacter
-          </a>
+          </ObfuscatedEmail>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ObfuscatedEmail from '../components/ObfuscatedEmail.astro';
 ---
 
 <BaseLayout
@@ -40,7 +41,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p>
         Si vous êtes victime ou témoin d'un comportement inacceptable, veuillez
         le signaler immédiatement aux organisateurs présents lors de l'événement
-        ou par email à <a href="mailto:contact@toulouse-devops.org">contact@toulouse-devops.org</a>.
+        ou par email à <ObfuscatedEmail class="text-primary hover:underline" />.
       </p>
       <p>
         Tous les signalements seront traités avec discrétion et confidentialité.

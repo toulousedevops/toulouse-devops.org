@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ObfuscatedEmail from '../components/ObfuscatedEmail.astro';
 ---
 
 <BaseLayout
@@ -19,7 +20,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <ul>
         <li><strong>Association :</strong> Toulouse DevOps</li>
         <li><strong>Siège social :</strong> Toulouse, France</li>
-        <li><strong>Email :</strong> contact@toulouse-devops.org</li>
+        <li><strong>Email :</strong> <ObfuscatedEmail class="text-primary hover:underline" /></li>
       </ul>
 
       <h2>Hébergement</h2>
