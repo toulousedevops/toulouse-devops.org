@@ -1,0 +1,67 @@
+---
+interface Props {
+  subject?: string;
+  class?: string;
+  showIcon?: boolean;
+}
+
+const { subject = '', class: className = '', showIcon = false } = Astro.props;
+
+// Encode email parts to prevent scraping
+const user = 'contact';
+const domain = 'toulouse-devops.org';
+// Base64 encode the parts
+const encodedUser = Buffer.from(user).toString('base64');
+const encodedDomain = Buffer.from(domain).toString('base64');
+const encodedSubject = subject ? Buffer.from(subject).toString('base64') : '';
+---
+
+<a
+  href="#"
+  class={className}
+  data-email-link
+  data-u={encodedUser}
+  data-d={encodedDomain}
+  data-s={encodedSubject}
+>
+  {showIcon && (
+    <svg class="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>
+  )}
+  <slot>
+    <span data-email-text></span>
+  </slot>
+</a>
+
+<script>
+  function decodeBase64(str: string): string {
+    return atob(str);
+  }
+
+  function initObfuscatedEmails() {
+    document.querySelectorAll('[data-email-link]').forEach((link) => {
+      const el = link as HTMLAnchorElement;
+      const user = decodeBase64(el.dataset.u || '');
+      const domain = decodeBase64(el.dataset.d || '');
+      const subject = el.dataset.s ? decodeBase64(el.dataset.s) : '';
+
+      const email = `${user}@${domain}`;
+      const href = `mailto:${email}${subject ? `?subject=${encodeURIComponent(subject)}` : ''}`;
+
+      el.href = href;
+
+      // Update text if using default slot
+      const textEl = el.querySelector('[data-email-text]');
+      if (textEl) {
+        textEl.textContent = email;
+      }
+    });
+  }
+
+  // Init on page load
+  initObfuscatedEmails();
+
+  // Re-init on Astro page navigation
+  document.addEventListener('astro:page-load', initObfuscatedEmails);
+</script>
