@@ -1,84 +1,370 @@
 {
   "events": [
     {
-      "id": "meetup-42",
-      "title": "Meetup #42 - Platform Engineering & GitOps",
-      "description": "Deux talks passionnants sur le Platform Engineering et les bonnes pratiques GitOps avec ArgoCD.",
-      "date": "2026-02-20T19:00:00+01:00",
-      "endDate": "2026-02-20T22:00:00+01:00",
+      "id": "meetup-1",
+      "title": "Track DevOps du Capitole du Libre 2014",
+      "description": "Premier meetup de Toulouse DevOps, organisé dans le cadre du Capitole du Libre. Le samedi est consacré à des conférences sur l'introduction au DevOps, Docker, les outils de gestion de configuration, et OpenStack. Le dimanche, deux ateliers sont proposés : un sur SaltStack et un autre sur Docker.",
+      "date": "2014-11-15T10:00:00+01:00",
+      "endDate": "2014-11-16T17:00:00+01:00",
       "location": {
-        "name": "Epitech Toulouse",
-        "address": "40 Boulevard de la Marquette, 31000 Toulouse",
+        "name": "ENSEEIHT",
+        "address": "2 Rue Charles Camichel, 31000 Toulouse",
         "city": "Toulouse"
       },
       "talks": [
-        {
-          "title": "Platform Engineering : construire une Internal Developer Platform",
-          "speaker": "Marie Dupont",
-          "duration": 45
-        },
-        {
-          "title": "GitOps en production avec ArgoCD",
-          "speaker": "Thomas Martin",
-          "duration": 30
-        }
+        { "title": "Introduction au DevOps", "speaker": "", "duration": 60 },
+        { "title": "Docker", "speaker": "", "duration": 60 },
+        { "title": "Outils de gestion de configuration", "speaker": "", "duration": 60 },
+        { "title": "OpenStack", "speaker": "", "duration": 60 },
+        { "title": "Atelier SaltStack", "speaker": "", "duration": 120 },
+        { "title": "Atelier Docker", "speaker": "", "duration": 120 }
       ],
-      "tags": ["platform-engineering", "gitops", "kubernetes"],
-      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/123456789",
-      "status": "upcoming"
+      "tags": ["devops", "docker", "configuration-management", "openstack", "saltstack"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/",
+      "status": "past"
     },
     {
-      "id": "meetup-41",
-      "title": "Meetup #41 - Observabilité & OpenTelemetry",
-      "description": "Soirée dédiée à l'observabilité moderne avec OpenTelemetry et les bonnes pratiques de monitoring.",
-      "date": "2026-01-16T19:00:00+01:00",
-      "endDate": "2026-01-16T22:00:00+01:00",
+      "id": "meetup-2",
+      "title": "Docker et CoreOS, le duo d'enfer de l'infrastructure",
+      "description": "Pierre Ozoux du projet IndieHosters présente leur environnement technique basé sur les dernières tendances d'infrastructure : CoreOS et Docker. Co-organisé avec Toulibre.",
+      "date": "2014-12-15T18:45:00+01:00",
+      "endDate": "2014-12-15T21:45:00+01:00",
+      "location": {
+        "name": "ENSEEIHT",
+        "address": "2 Rue Charles Camichel, 31000 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        { "title": "Docker et CoreOS, le duo d'enfer de l'infrastructure", "speaker": "Pierre Ozoux (IndieHosters)", "duration": 90 }
+      ],
+      "tags": ["docker", "coreos", "infrastructure"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/218985355/",
+      "status": "past"
+    },
+    {
+      "id": "meetup-3",
+      "title": "ELK et Sentry",
+      "description": "Troisième meetup de Toulouse DevOps à La Cantine. Leonardo présente la stack ELK (ElasticSearch, Logstash et Kibana) pour rendre vos logs compréhensibles. Antoine présente Sentry, un outil de tracking d'erreurs et ses intégrations avec différents outils.",
+      "date": "2015-04-20T19:00:00+02:00",
+      "endDate": "2015-04-20T22:00:00+02:00",
       "location": {
         "name": "La Cantine Toulouse",
         "address": "27 Rue d'Aubuisson, 31000 Toulouse",
         "city": "Toulouse"
       },
       "talks": [
-        {
-          "title": "OpenTelemetry : le futur de l'observabilité",
-          "speaker": "Julie Bernard",
-          "duration": 45
-        },
-        {
-          "title": "REX : Mise en place d'une stack d'observabilité chez OVHcloud",
-          "speaker": "Pierre Lefebvre",
-          "duration": 30
-        }
+        { "title": "La stack ELK (ElasticSearch, Logstash, Kibana)", "speaker": "Leonardo", "duration": 45 },
+        { "title": "Sentry, un outil de tracking d'erreurs", "speaker": "Antoine", "duration": 45 }
       ],
-      "tags": ["observability", "opentelemetry", "monitoring"],
-      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/123456788",
+      "tags": ["elk", "elasticsearch", "logstash", "kibana", "sentry", "monitoring", "logs"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/",
       "status": "past"
     },
     {
-      "id": "meetup-40",
-      "title": "Meetup #40 - Kubernetes Security",
-      "description": "Focus sécurité avec des talks sur le hardening Kubernetes et les politiques réseau.",
-      "date": "2025-12-12T19:00:00+01:00",
-      "endDate": "2025-12-12T22:00:00+01:00",
+      "id": "meetup-4",
+      "title": "Présentation sur Amazon Web Services",
+      "description": "Nicolas Fonrose, fondateur de Teevity, présente Amazon Web Services et démontre qu'AWS offre bien plus que le simple lancement de machines virtuelles.",
+      "date": "2015-06-18T19:00:00+02:00",
+      "endDate": "2015-06-18T22:00:00+02:00",
       "location": {
-        "name": "Airbus Defence & Space",
-        "address": "31 Rue des Cosmonautes, 31400 Toulouse",
+        "name": "La Cantine Toulouse",
+        "address": "27 Rue d'Aubuisson, 31000 Toulouse",
         "city": "Toulouse"
       },
       "talks": [
-        {
-          "title": "Sécuriser son cluster Kubernetes : les fondamentaux",
-          "speaker": "Nicolas Rousseau",
-          "duration": 45
-        },
-        {
-          "title": "Network Policies et Service Mesh : mieux contrôler le trafic",
-          "speaker": "Sophie Garnier",
-          "duration": 30
-        }
+        { "title": "Amazon Web Services", "speaker": "Nicolas Fonrose (Teevity)", "duration": 60 }
       ],
-      "tags": ["kubernetes", "security", "networking"],
-      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/123456787",
+      "tags": ["aws", "cloud"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/",
+      "status": "past"
+    },
+    {
+      "id": "meetup-5",
+      "title": "Quoi de neuf du côté d'OpenStack / Découvrez Ansible",
+      "description": "Deux présentations. Christophe Sauthier revient sur les dernières nouveautés d'OpenStack, le principal concurrent Open Source d'Amazon Web Services. Thibault Richard présente les fondamentaux d'Ansible et des cas d'usage concrets, notamment le couplage d'Ansible avec un Cloud OpenStack pour démarrer et configurer des instances.",
+      "date": "2015-11-04T19:00:00+01:00",
+      "endDate": "2015-11-04T22:00:00+01:00",
+      "location": {
+        "name": "Etincelle Coworking",
+        "address": "2 Rue d'Austerlitz, 31000 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        { "title": "Quoi de neuf du côté d'OpenStack", "speaker": "Christophe Sauthier", "duration": 45 },
+        { "title": "À la découverte d'Ansible", "speaker": "Thibault Richard", "duration": 45 }
+      ],
+      "tags": ["openstack", "ansible", "cloud", "configuration-management"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/226016373/",
+      "status": "past"
+    },
+    {
+      "id": "meetup-6",
+      "title": "Infrastructure as Code avec AWS",
+      "description": "Julien Simon, Technical Evangelist chez Amazon Web Services et ancien CTO de Viadeo, présente CloudFormation, l'outil d'automatisation d'infrastructure sur AWS. En partant de rien, on construira une architecture réseau basique avec plusieurs subnets, instances et un load balancer, en abordant les concepts fondamentaux d'AWS et leur déploiement automatisé.",
+      "date": "2016-02-24T19:00:00+01:00",
+      "endDate": "2016-02-24T22:00:00+01:00",
+      "location": {
+        "name": "Etincelle Coworking des Carmes",
+        "address": "1 Rue Bouquières, 31000 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        { "title": "Infrastructure as Code avec AWS CloudFormation", "speaker": "Julien Simon (AWS)", "duration": 60 }
+      ],
+      "tags": ["aws", "cloudformation", "infrastructure-as-code", "cloud"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/228608050/",
+      "status": "past"
+    },
+    {
+      "id": "meetup-7",
+      "title": "Le grand tour sur Linux & Docker dans Microsoft Azure",
+      "description": "Co-organisé avec le groupe Toulouse Microsoft Azure et sponsorisé par Microsoft France. Découvrez les solutions Linux et Docker disponibles sur la plateforme Microsoft Azure. Au programme : les fondamentaux Azure IaaS, les outils d'administration Linux, le déploiement de machines virtuelles avec Azure Resource Manager, l'automatisation et le monitoring des environnements Linux, et les containers Docker dans Azure avec DC/OS.",
+      "date": "2016-09-15T19:00:00+02:00",
+      "endDate": "2016-09-15T22:00:00+02:00",
+      "location": {
+        "name": "ENSEEIHT",
+        "address": "2 Rue Charles Camichel, 31000 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        { "title": "Linux et Docker dans Microsoft Azure", "speaker": "Stanislas Quastana (Microsoft France)", "duration": 45 },
+        { "title": "Automatisation et containers Docker dans Azure", "speaker": "Pascal Sauliere (Microsoft France)", "duration": 45 }
+      ],
+      "tags": ["azure", "docker", "linux", "cloud", "microsoft"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/233708062/",
+      "status": "past"
+    },
+    {
+      "id": "meetup-8",
+      "title": "Track DevOps du Capitole du Libre 2016",
+      "description": "Toulouse DevOps organise la track DevOps dans le cadre du Capitole du Libre. Le samedi est consacré aux conférences et le dimanche aux ateliers pratiques.",
+      "date": "2016-11-19T10:00:00+01:00",
+      "endDate": "2016-11-20T16:00:00+01:00",
+      "location": {
+        "name": "ENSEEIHT",
+        "address": "2 Rue Charles Camichel, 31000 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        { "title": "Un Web sous surveillance", "speaker": "Thibault Jouannic", "duration": 60 },
+        { "title": "Présentation de la plateforme AWS", "speaker": "Julien Simon", "duration": 60 },
+        { "title": "Retour d'expérience sur l'utilisation de Saltstack chez Cozy Cloud", "speaker": "Nicolas Ledez", "duration": 60 },
+        { "title": "Continuous Delivery avec Docker et Jenkins", "speaker": "Benoit Lemarchand", "duration": 60 },
+        { "title": "Docker et les clouds hybrides", "speaker": "Adrien Blind", "duration": 60 },
+        { "title": "L'évolution des containers chez BlaBlaCar", "speaker": "Simon Lallemand", "duration": 60 },
+        { "title": "Kibana+Timelion", "speaker": "Sylvain Wallez", "duration": 60 },
+        { "title": "Atelier Docker avancé", "speaker": "Adrien Blind", "duration": 120 },
+        { "title": "Déploiement OpenStack avec Ansible", "speaker": "Adrien Cunin", "duration": 120 },
+        { "title": "Jenkins Pipeline CD", "speaker": "Michaël Pailloncy", "duration": 120 }
+      ],
+      "tags": ["capitole-du-libre", "docker", "jenkins", "aws", "saltstack", "openstack", "kibana", "blablacar", "continuous-delivery"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/234118594/",
+      "status": "past"
+    },
+    {
+      "id": "meetup-9",
+      "title": "Infrastructure as Code avec Terraform, Packer, Ansible et Powershell DSC",
+      "description": "L'Infrastructure as Code permet de réduire les coûts de déploiement grâce aux principes d'idempotence. Maxime Thibaut et Laurent Vasseur démontrent le déploiement d'une architecture de base sur AWS, en expliquant quelle technologie résout quel défi d'infrastructure.",
+      "date": "2018-06-21T19:00:00+02:00",
+      "endDate": "2018-06-21T21:00:00+02:00",
+      "location": {
+        "name": "CESI",
+        "address": "16 Rue Magellan, 31670 Labège",
+        "city": "Labège"
+      },
+      "talks": [
+        { "title": "Infrastructure as Code avec Terraform, Packer, Ansible et Powershell DSC", "speaker": "Maxime Thibaut, Laurent Vasseur", "duration": 60 }
+      ],
+      "tags": ["terraform", "packer", "ansible", "powershell-dsc", "infrastructure-as-code", "aws"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/251544329/",
+      "status": "past"
+    },
+    {
+      "id": "meetup-10",
+      "title": "Un peu de craft dans l'Infra as Code",
+      "description": "Lors de cette présentation, nous parlerons des principes véhiculés par le mouvement Software Craftsmanship et comment les décliner sur cette matière étrange qu'est l'infra as code. Nous parlerons de pratiques de dev, de qualité dans le temps et d'exemples de détournement d'outils pour tester plus efficacement. Niveau outils, on parlera principalement d'Ansible et de Terraform.",
+      "date": "2018-06-28T19:00:00+02:00",
+      "endDate": "2018-06-28T21:00:00+02:00",
+      "location": {
+        "name": "ENSEEIHT",
+        "address": "2 Rue Charles Camichel, 31000 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        { "title": "Un peu de craft dans l'Infra as Code", "speaker": "Alexandre Raoul", "duration": 60 }
+      ],
+      "tags": ["software-craftsmanship", "infrastructure-as-code", "ansible", "terraform", "testing"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/251544549/",
+      "status": "past"
+    },
+    {
+      "id": "meetup-11",
+      "title": "Introduction à Docker et aux containers",
+      "description": "Pour débuter la saison (en douceur), nous proposons une introduction à Docker et aux containers. Vous ne vous sentez pas à l'aise, vous voulez être sûr de comprendre l'intérêt des containers ? C'est la présentation à ne pas rater ! Après avoir présenté les containers, leur intérêt, nous reverrons l'écosystème Docker et les outils qu'il faut absolument connaître pour être efficace avec Docker.",
+      "date": "2018-10-18T19:00:00+02:00",
+      "endDate": "2018-10-18T21:00:00+02:00",
+      "location": {
+        "name": "ENSEEIHT",
+        "address": "2 Rue Charles Camichel, 31000 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        { "title": "Introduction à Docker et aux containers", "speaker": "Antoine Beyet", "duration": 60 }
+      ],
+      "tags": ["docker", "containers"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/255364794/",
+      "status": "past"
+    },
+    {
+      "id": "meetup-12",
+      "title": "Mise en place de l'observabilité sur une architecture serverless AWS",
+      "description": "La session couvre les fondamentaux de l'observabilité appliqués aux architectures serverless AWS. Exploration des trois piliers : métriques, traces et logs, avec des démonstrations live utilisant DataDog.",
+      "date": "2019-05-21T19:00:00+02:00",
+      "endDate": "2019-05-21T21:00:00+02:00",
+      "location": {
+        "name": "Epitech Toulouse",
+        "address": "40 Boulevard de la Marquette, 31000 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        { "title": "Mise en place de l'observabilité sur une architecture serverless AWS", "speaker": "Steve Houel (Ippon Technologies)", "duration": 60 }
+      ],
+      "tags": ["observability", "serverless", "aws", "datadog", "monitoring"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/261314071/",
+      "status": "past"
+    },
+    {
+      "id": "meetup-13",
+      "title": "Retour d'expérience : management des équipes tech chez un GAFA",
+      "description": "En partenariat avec IoT Valley Dev meetup. Frederik Delacourt partage son expérience de 5 ans chez Amazon sur le management des équipes techniques aux USA.",
+      "date": "2019-06-13T19:00:00+02:00",
+      "endDate": "2019-06-13T21:00:00+02:00",
+      "location": {
+        "name": "ENSEEIHT",
+        "address": "2 Rue Charles Camichel, 31000 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        { "title": "Retour d'expérience : management des équipes tech chez un GAFA", "speaker": "Frederik Delacourt", "duration": 90 }
+      ],
+      "tags": ["management", "retour-experience", "amazon", "culture"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/262199370/",
+      "status": "past"
+    },
+    {
+      "id": "meetup-14",
+      "title": "Comment exploiter à fond GitLab",
+      "description": "Philippe Charrière de GitLab revient sur comment utiliser efficacement GitLab : gestion de projet, board, gestion des risques, workflows, reports, dashboard... Philippe Charrière est Technical Account Manager chez GitLab, il est également core-commiter Go.",
+      "date": "2019-09-12T19:00:00+02:00",
+      "endDate": "2019-09-12T21:00:00+02:00",
+      "location": {
+        "name": "ENSEEIHT",
+        "address": "2 Rue Charles Camichel, 31000 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        { "title": "Comment exploiter à fond GitLab", "speaker": "Philippe Charrière (GitLab)", "duration": 60 }
+      ],
+      "tags": ["gitlab", "devops", "ci-cd"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/264545373/",
+      "status": "past"
+    },
+    {
+      "id": "meetup-15",
+      "title": "Découverte de GitLab par la pratique (Workshop)",
+      "description": "Philippe Charrière (Technical Account Manager @GitLab) et Kevin Davin (CTO @ Stack Labs) animent une formation gratuite d'une journée. Le matin : 'Transformez votre projet en projet DevOps en moins d'une heure'. L'après-midi : 'Una-Gitlab, le TP à Roulette !'.",
+      "date": "2019-09-13T09:30:00+02:00",
+      "endDate": "2019-09-13T17:00:00+02:00",
+      "location": {
+        "name": "Le Village by CA Toulouse 31",
+        "address": "31 Allée Jules Guesde, 31000 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        { "title": "Transformez votre projet en projet DevOps en moins d'une heure", "speaker": "Philippe Charrière (GitLab)", "duration": 120 },
+        { "title": "Una-Gitlab, le TP à Roulette !", "speaker": "Kevin Davin (Stack Labs)", "duration": 180 }
+      ],
+      "tags": ["gitlab", "workshop", "ci-cd", "devops"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/264545407/",
+      "status": "past"
+    },
+    {
+      "id": "meetup-16",
+      "title": "Quoi de neuf avec Traefik 2.0, le edge router à 1 milliard de téléchargements ?",
+      "description": "Traefik est un reverse proxy Open Source qui doit sa popularité à sa facilité d'utilisation dans le monde du cloud. Conçu pour un monde de conteneurs, Traefik sait détecter automatiquement vos applications et met à jour sa configuration à chaud. La nouvelle version est le résultat de 4 années d'expérience et de retours utilisateurs.",
+      "date": "2019-10-17T19:00:00+02:00",
+      "endDate": "2019-10-17T21:00:00+02:00",
+      "location": {
+        "name": "ENSEEIHT",
+        "address": "2 Rue Charles Camichel, 31000 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        { "title": "Quoi de neuf avec Traefik 2.0", "speaker": "Jean-Baptiste Doumenjou (Containous)", "duration": 60 }
+      ],
+      "tags": ["traefik", "reverse-proxy", "containers", "cloud-native"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/265278248/",
+      "status": "past"
+    },
+    {
+      "id": "meetup-17",
+      "title": "Track DevOps du Capitole du Libre 2019",
+      "description": "Dans le cadre du Capitole du Libre, Toulouse DevOps organise la track DevOps. Le samedi : conférences sur Debian, Prometheus, Gitlab CI, les reverse proxy pour containers, et le multi-cloud. Le dimanche : ateliers pratiques sur Linkerd2 (Service Mesh) et CI/CD avec Gitlab CI & Kubernetes.",
+      "date": "2019-11-16T10:30:00+01:00",
+      "endDate": "2019-11-17T16:30:00+01:00",
+      "location": {
+        "name": "ENSEEIHT",
+        "address": "2 Rue Charles Camichel, 31000 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        { "title": "Qui a dit que Debian était réservé aux serveurs", "speaker": "Jean-Philippe Mengual", "duration": 60 },
+        { "title": "1001 façons d'installer Prometheus...", "speaker": "Mathieu Cinquin, David Sabatié", "duration": 30 },
+        { "title": "Plateforme d'intégration continue élastique avec Gitlab CI", "speaker": "Sébastien Dinot", "duration": 30 },
+        { "title": "Quel reverse proxy pour mes containers ?", "speaker": "Antoine Beyet", "duration": 60 },
+        { "title": "Cloud : 3 scénarios multi-providers, du portage IaaS au serverless en abstraction totale", "speaker": "Adrien Blind, Ludovic Piot, Laurent Grangeau", "duration": 60 },
+        { "title": "Atelier : Découvrir la Service Mesh avec Linkerd2", "speaker": "David Charbonnier", "duration": 120 },
+        { "title": "Atelier : Introduction au CI/CD avec Gitlab CI & Kubernetes", "speaker": "Adrien Blind, Ludovic Piot, Laurent Grangeau", "duration": 120 }
+      ],
+      "tags": ["capitole-du-libre", "debian", "prometheus", "gitlab-ci", "reverse-proxy", "multi-cloud", "linkerd", "service-mesh", "kubernetes", "ci-cd"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/266389436/",
+      "status": "past"
+    },
+    {
+      "id": "meetup-18",
+      "title": "Construire une banque pour 3,5 millions d'utilisateurs",
+      "description": "En moins de quatre ans, en s'appuyant sur des technologies open-sources et AWS, Monzo a réussi à créer une banque pour plus de trois millions d'utilisateurs. Ce talk présentera l'infrastructure nécessaire à une telle croissance et abordera les défis liés à la construction d'une infrastructure bancaire.",
+      "date": "2019-12-03T19:00:00+01:00",
+      "endDate": "2019-12-03T21:00:00+01:00",
+      "location": {
+        "name": "ENSEEIHT",
+        "address": "2 Rue Charles Camichel, 31000 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        { "title": "Construire une banque pour 3,5 millions d'utilisateurs", "speaker": "Guillaume Breton (Monzo)", "duration": 60 }
+      ],
+      "tags": ["monzo", "aws", "infrastructure", "scalability", "fintech"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/266603880/",
+      "status": "past"
+    },
+    {
+      "id": "meetup-19",
+      "title": "Reprise avec une soirée dédiée au DevSecOps",
+      "description": "Soirée marquant la reprise des meetups Toulouse DevOps, avec deux talks sur la sécurité. Le premier sur Pod Security Admission dans Kubernetes 1.25 (Pod Security Policies et OPA Gatekeeper avec démonstration live). Le second sur le DevSecOps en action : analyse contextuelle, intégration IDE (Shift Left), et exécution de code à distance pour sécuriser les pipelines de déploiement.",
+      "date": "2023-05-25T18:30:00+02:00",
+      "endDate": "2023-05-25T21:30:00+02:00",
+      "location": {
+        "name": "Stack Labs",
+        "address": "21 Boulevard de la Marquette, Bâtiment B, 1er étage, 31000 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        { "title": "Pod Security Admission", "speaker": "Alexis Aurin, Julien Raton (Stack Labs)", "duration": 45 },
+        { "title": "DevSecOps in Action", "speaker": "David Robin (JFrog)", "duration": 45 }
+      ],
+      "tags": ["devsecops", "kubernetes", "security", "pod-security", "opa-gatekeeper"],
+      "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/293293519/",
       "status": "past"
     }
   ]
