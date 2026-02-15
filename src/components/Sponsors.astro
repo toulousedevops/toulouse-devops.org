@@ -27,10 +27,11 @@ const { sponsors } = sponsorsData;
           rel="noopener noreferrer"
           class="group flex items-center justify-center p-6 bg-background rounded-xl hover:shadow-card transition-all"
         >
-          <!-- Placeholder for sponsor logo -->
-          <div class="w-full h-16 flex items-center justify-center bg-primary-pale rounded-lg text-primary font-heading font-medium group-hover:bg-primary group-hover:text-white transition-colors">
-            {sponsor.name}
-          </div>
+          <img
+            src={sponsor.logo}
+            alt={`Logo ${sponsor.name}`}
+            class="max-h-16 w-auto object-contain"
+          />
         </a>
       ))}
     </div>
