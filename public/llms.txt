@@ -1,0 +1,61 @@
+# Toulouse DevOps
+
+> Toulouse DevOps est une association qui rassemble les passionnés d'infrastructure, d'automatisation et de culture DevOps à Toulouse. Nous organisons des meetups gratuits avec des talks techniques, des retours d'expérience et du networking. Que tu sois dev, ops, SRE ou simplement curieux, tu es le bienvenu !
+
+Toulouse DevOps organise des rencontres "Meetup" autour de la thématique DevOps à Toulouse depuis 2014. L'ambiance est professionnelle mais décontractée — on parle tech sérieusement, mais autour d'une boisson et de pizzas.
+
+## Ce qu'on fait
+
+- Meetups gratuits (talks + networking)
+- Thématiques : Kubernetes, CI/CD, observabilité, platform engineering, Infrastructure as Code, SRE, Docker, cloud, sécurité...
+- Format : 1-2 talks de 30-45min + discussions autour de pizzas et boissons
+- 19+ meetups organisés depuis 2014, 2000+ membres
+
+## Lieux habituels
+
+- ENSEEIHT, 2 Rue Charles Camichel, 31000 Toulouse
+- Epitech Toulouse, 40 Boulevard de la Marquette, 31000 Toulouse
+- Stack Labs, 21 Boulevard de la Marquette, 31000 Toulouse
+
+## Sponsor
+
+- Bleemeo (https://bleemeo.com)
+
+## Réseaux sociaux
+
+- Meetup : https://www.meetup.com/fr-FR/Toulouse-DevOps/
+- X/Twitter : https://x.com/toulousedevops
+- Bluesky : https://bsky.app/profile/toulouse-devops.org
+- Instagram : https://instagram.com/toulouse-devops
+- LinkedIn : https://linkedin.com/company/toulouse-devops
+- GitHub : https://github.com/toulousedevops
+
+## Pages du site
+
+- [Accueil](https://toulouse-devops.org/): Page principale avec présentation, événements à venir, sponsors
+- [Code de conduite](https://toulouse-devops.org/code-de-conduite/): Règles de la communauté pour un environnement inclusif et respectueux
+- [Mentions légales](https://toulouse-devops.org/mentions-legales/): Informations légales de l'association
+
+## Optional
+
+### Historique des meetups
+
+- Meetup #1 (Nov 2014) : Track DevOps du Capitole du Libre 2014 — Introduction au DevOps, Docker, gestion de configuration, OpenStack
+- Meetup #2 (Déc 2014) : Docker et CoreOS, le duo d'enfer de l'infrastructure — Pierre Ozoux (IndieHosters)
+- Meetup #3 (Avr 2015) : ELK et Sentry — Stack ELK et tracking d'erreurs
+- Meetup #4 (Juin 2015) : Présentation sur Amazon Web Services — Nicolas Fonrose (Teevity)
+- Meetup #5 (Nov 2015) : OpenStack et Ansible — Christophe Sauthier, Thibault Richard
+- Meetup #6 (Fév 2016) : Infrastructure as Code avec AWS CloudFormation — Julien Simon (AWS)
+- Meetup #7 (Sep 2016) : Linux & Docker dans Microsoft Azure — Stanislas Quastana, Pascal Sauliere (Microsoft France)
+- Meetup #8 (Nov 2016) : Track DevOps du Capitole du Libre 2016 — Docker, Jenkins, AWS, Saltstack, OpenStack, Kibana, BlaBlaCar
+- Meetup #9 (Juin 2018) : Infrastructure as Code avec Terraform, Packer, Ansible et Powershell DSC — Maxime Thibaut, Laurent Vasseur
+- Meetup #10 (Juin 2018) : Un peu de craft dans l'Infra as Code — Alexandre Raoul
+- Meetup #11 (Oct 2018) : Introduction à Docker et aux containers — Antoine Beyet
+- Meetup #12 (Mai 2019) : Observabilité sur architecture serverless AWS — Steve Houel (Ippon Technologies)
+- Meetup #13 (Juin 2019) : Management des équipes tech chez un GAFA — Frederik Delacourt
+- Meetup #14 (Sep 2019) : Comment exploiter à fond GitLab — Philippe Charrière (GitLab)
+- Meetup #15 (Sep 2019) : Découverte de GitLab par la pratique (Workshop) — Philippe Charrière (GitLab), Kevin Davin (Stack Labs)
+- Meetup #16 (Oct 2019) : Quoi de neuf avec Traefik 2.0 — Jean-Baptiste Doumenjou (Containous)
+- Meetup #17 (Nov 2019) : Track DevOps du Capitole du Libre 2019 — Debian, Prometheus, Gitlab CI, reverse proxy, multi-cloud, Linkerd2
+- Meetup #18 (Déc 2019) : Construire une banque pour 3,5 millions d'utilisateurs — Guillaume Breton (Monzo)
+- Meetup #19 (Mai 2023) : Reprise avec une soirée dédiée au DevSecOps — Pod Security Admission, DevSecOps in Action
