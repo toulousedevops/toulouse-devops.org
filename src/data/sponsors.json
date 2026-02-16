@@ -3,8 +3,7 @@
     {
       "name": "Bleemeo",
       "logo": "/static/img/bleemeo_logo_300px.png",
-      "url": "https://bleemeo.com",
-      "tier": "gold"
+      "url": "https://bleemeo.com"
     }
   ]
 }
