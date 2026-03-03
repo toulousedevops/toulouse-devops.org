@@ -1,5 +1,6 @@
 ---
 import siteData from '../data/site.json';
+import Picture from './Picture.astro';
 ---
 
 <section class="relative bg-gradient-to-br from-primary to-primary-light text-white overflow-hidden">
@@ -52,12 +53,13 @@ import siteData from '../data/site.json';
 
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <img
+        <Picture
           src="/static/img/logo-toulouse-devops-2026-512px-transparent.png"
           alt="Logo Toulouse DevOps"
           class="w-48 md:w-64 lg:w-80 h-auto drop-shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
-          width="320"
-          height="320"
+          width={320}
+          height={320}
+          loading="eager"
         />
       </div>
     </div>

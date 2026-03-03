@@ -9,7 +9,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "generate-assets": "node scripts/generate-assets.mjs"
+    "generate-assets": "node scripts/generate-assets.mjs",
+    "convert-images": "bash scripts/convert-images.sh"
   },
   "keywords": [
     "toulouse",

@@ -1,0 +1,30 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+}
+
+const { src, alt, width, height, class: className, loading = 'lazy', ...attrs } = Astro.props;
+
+const basePath = src.replace(/\.[^.]+$/, '');
+const avifSrc = `${basePath}.avif`;
+const webpSrc = `${basePath}.webp`;
+---
+
+<picture>
+  <source srcset={avifSrc} type="image/avif" />
+  <source srcset={webpSrc} type="image/webp" />
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    class={className}
+    loading={loading}
+    {...attrs}
+  />
+</picture>

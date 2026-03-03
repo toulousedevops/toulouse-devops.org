@@ -1,6 +1,7 @@
 ---
 import siteData from '../data/site.json';
 import SocialIcon from './SocialIcon.astro';
+import Picture from './Picture.astro';
 
 const currentYear = new Date().getFullYear();
 ---
@@ -11,12 +12,13 @@ const currentYear = new Date().getFullYear();
       <!-- About -->
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img
+          <Picture
             src="/static/img/logo-toulouse-devops.png"
             alt="Logo Toulouse DevOps"
             class="h-10 w-auto"
-            width="40"
-            height="40"
+            width={40}
+            height={40}
+            loading="eager"
           />
           <span class="font-heading font-bold text-xl">Toulouse DevOps</span>
         </div>

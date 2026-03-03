@@ -1,6 +1,7 @@
 ---
 import sponsorsData from '../data/sponsors.json';
 import ObfuscatedEmail from './ObfuscatedEmail.astro';
+import Picture from './Picture.astro';
 
 const { sponsors } = sponsorsData;
 ---
@@ -27,7 +28,7 @@ const { sponsors } = sponsorsData;
           rel="noopener noreferrer"
           class="group flex items-center justify-center p-6 bg-background rounded-xl hover:shadow-card transition-all"
         >
-          <img
+          <Picture
             src={sponsor.logo}
             alt={`Logo ${sponsor.name}`}
             class="max-h-16 w-auto object-contain"
