@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page introuvable"
+  description="La page que vous recherchez n'existe pas ou a été déplacée."
+>
+  <div class="min-h-[60vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20">
+    <div class="text-center max-w-lg">
+      <p class="text-8xl md:text-9xl font-heading font-bold text-accent opacity-80">
+        404
+      </p>
+      <h1 class="mt-4 text-2xl md:text-3xl font-heading font-bold text-primary">
+        Page introuvable
+      </h1>
+      <p class="mt-4 text-lg text-text-light">
+        On dirait que cette page a été déployée... nulle part.
+        <br />
+        Même un bon pipeline CI/CD ne peut pas la retrouver.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z" />
+          </svg>
+          Retour à l'accueil
+        </a>
+        <a
+          href="https://www.meetup.com/fr-FR/Toulouse-DevOps/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+        >
+          Voir nos meetups
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
