@@ -21,10 +21,10 @@
   "author": "Toulouse DevOps",
   "license": "MIT",
   "dependencies": {
-    "@astrojs/check": "^0.9.7",
+    "@astrojs/check": "^0.9.8",
     "@astrojs/sitemap": "^3.7.1",
     "@tailwindcss/vite": "^4.2.1",
-    "astro": "^6.0.3",
+    "astro": "^6.0.5",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3"
   },
