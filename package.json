@@ -12,6 +12,10 @@
     "generate-assets": "node scripts/generate-assets.mjs",
     "convert-images": "bash scripts/convert-images.sh"
   },
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=10.0.0"
+  },
   "keywords": [
     "toulouse",
     "devops",
@@ -24,7 +28,7 @@
     "@astrojs/check": "^0.9.9",
     "@astrojs/sitemap": "^3.7.2",
     "@tailwindcss/vite": "^4.2.4",
-    "astro": "^6.2.1",
+    "astro": "^6.2.2",
     "tailwindcss": "^4.2.4",
     "typescript": "^5.9.3"
   },
