@@ -104,7 +104,6 @@ Le thème est géré via :
 | Meetup | https://www.meetup.com/fr-FR/Toulouse-DevOps/ |
 | X/Twitter | https://x.com/toulousedevops |
 | Bluesky | https://bsky.app/profile/toulouse-devops.org |
-| Instagram | https://instagram.com/toulouse-devops |
 | LinkedIn | https://linkedin.com/company/toulouse-devops |
 | GitHub | https://github.com/toulousedevops |
 
