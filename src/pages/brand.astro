@@ -1,0 +1,380 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Logo files available for download
+const logoSvg = '/static/img/logo-toulouse-devops.svg';
+const logoPng = '/static/img/logo-toulouse-devops-2026-512px-transparent.png';
+
+// Brand color palette (charte graphique Toulouse DevOps)
+const colorGroups = [
+  {
+    title: 'Couleurs principales',
+    colors: [
+      { name: 'Bleu principal', hex: '#0e2d5a', usage: 'Titres, éléments principaux, footer', dark: true },
+      { name: 'Rouge accent', hex: '#c83737', usage: 'CTA, badges, éléments d’attention', dark: true },
+    ],
+  },
+  {
+    title: 'Déclinaisons du bleu',
+    colors: [
+      { name: 'Bleu clair', hex: '#1a4a8a', usage: 'Hover, liens, accents secondaires', dark: true },
+      { name: 'Bleu pâle', hex: '#e8eef5', usage: 'Fonds de sections, cartes', dark: false },
+    ],
+  },
+  {
+    title: 'Déclinaisons du rouge',
+    colors: [
+      { name: 'Rouge clair', hex: '#e85555', usage: 'Hover sur CTA', dark: true },
+      { name: 'Rouge pâle', hex: '#fdf2f2', usage: 'Alertes, notifications', dark: false },
+    ],
+  },
+  {
+    title: 'Neutres',
+    colors: [
+      { name: 'Gris texte', hex: '#374151', usage: 'Corps de texte', dark: true },
+      { name: 'Gris clair', hex: '#6b7280', usage: 'Texte secondaire, légendes', dark: true },
+      { name: 'Fond de page', hex: '#fafbfc', usage: 'Background général', dark: false },
+      { name: 'Surface', hex: '#ffffff', usage: 'Cartes, conteneurs', dark: false },
+      { name: 'Bordure', hex: '#e5e7eb', usage: 'Bordures, séparateurs', dark: false },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Brand & assets"
+  description="Logo, couleurs et ressources de marque de Toulouse DevOps, à télécharger et partager."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+    <!-- Intro -->
+    <header class="max-w-3xl">
+      <h1 class="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">
+        Brand &amp; assets
+      </h1>
+      <p class="text-lg text-text-light">
+        Le logo et les couleurs de Toulouse DevOps, prêts à partager. Merci de
+        respecter le logo (pas de déformation ni de recoloration), de laisser
+        un espace de protection autour, et de le placer sur un fond clair pour
+        préserver sa lisibilité.
+      </p>
+      <p class="mt-6 text-xl font-heading font-medium text-text border-l-4 border-accent pl-4">
+        « La communauté DevOps de Toulouse — Meetups, talks et partage de bonnes pratiques »
+      </p>
+    </header>
+
+    <!-- Logo -->
+    <section class="mt-14" aria-labelledby="logo-heading">
+      <h2 id="logo-heading" class="text-2xl font-heading font-bold text-primary mb-6">
+        Logo
+      </h2>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <!-- Logo on light background -->
+        <figure class="rounded-xl border border-border overflow-hidden bg-surface shadow-card">
+          <div class="flex items-center justify-center p-10" style="background:#ffffff">
+            <img
+              src={logoPng}
+              alt="Logo Toulouse DevOps sur fond clair"
+              class="h-40 w-auto"
+              width="160"
+              height="160"
+              loading="eager"
+            />
+          </div>
+          <figcaption class="px-4 py-3 text-sm text-text-light border-t border-border">
+            Sur fond clair
+          </figcaption>
+        </figure>
+
+        <!-- Logo on pale background -->
+        <figure class="rounded-xl border border-border overflow-hidden shadow-card">
+          <div class="flex items-center justify-center p-10" style="background:#e8eef5">
+            <img
+              src={logoPng}
+              alt="Logo Toulouse DevOps sur fond bleu pâle"
+              class="h-40 w-auto"
+              width="160"
+              height="160"
+              loading="eager"
+            />
+          </div>
+          <figcaption class="px-4 py-3 text-sm text-text-light border-t border-border bg-surface">
+            Sur fond pâle
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Downloads -->
+      <div class="flex flex-wrap gap-3 mt-6">
+        <a
+          href={logoSvg}
+          download
+          class="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-primary-light transition-colors"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+          </svg>
+          Logo SVG
+        </a>
+        <a
+          href={logoPng}
+          download
+          class="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-primary-light transition-colors"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+          </svg>
+          Logo PNG (512px)
+        </a>
+      </div>
+      <p class="mt-3 text-sm text-text-light">
+        SVG vectoriel pour l’impression et les grandes tailles, PNG transparent
+        pour le web et les réseaux sociaux.
+      </p>
+    </section>
+
+    <!-- Usage rules -->
+    <section class="mt-16" aria-labelledby="usage-heading">
+      <h2 id="usage-heading" class="text-2xl font-heading font-bold text-primary mb-6">
+        Règles d’usage
+      </h2>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <!-- Clear space -->
+        <figure class="rounded-xl border border-border bg-surface shadow-card p-6">
+          <div class="flex items-center justify-center rounded-lg" style="padding:14%;background:#e8eef5">
+            <div class="border-2 border-dashed p-[14%] w-full flex items-center justify-center" style="border-color:#1a4a8a99">
+              <img
+                src={logoPng}
+                alt="Espace de protection autour du logo"
+                class="h-24 w-auto"
+                width="96"
+                height="96"
+              />
+            </div>
+          </div>
+          <figcaption class="mt-4">
+            <span class="block font-medium text-text">Espace de protection</span>
+            <span class="block mt-1 text-sm text-text-light">
+              Laisse une marge libre autour du logo, au moins égale à la hauteur
+              de la croix occitane. Aucun texte ni élément ne doit empiéter dessus.
+            </span>
+          </figcaption>
+        </figure>
+
+        <!-- Minimum size -->
+        <figure class="rounded-xl border border-border bg-surface shadow-card p-6">
+          <div class="flex flex-col items-center justify-center gap-3 rounded-lg py-14" style="background:#e8eef5">
+            <img
+              src={logoPng}
+              alt="Logo à sa taille minimale"
+              class="h-8 w-auto"
+              width="32"
+              height="32"
+            />
+            <span class="font-mono text-xs" style="color:#6b7280">32 px</span>
+          </div>
+          <figcaption class="mt-4">
+            <span class="block font-medium text-text">Taille minimale</span>
+            <span class="block mt-1 text-sm text-text-light">
+              Ne descends pas sous 32 px de hauteur sur écran (ou 10 mm à
+              l’impression) pour garder le logo lisible.
+            </span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Don'ts -->
+      <h3 class="text-lg font-heading font-semibold text-primary mt-10 mb-4">
+        À ne pas faire
+      </h3>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <figure class="rounded-xl border border-border bg-surface shadow-card overflow-hidden">
+          <div class="relative flex items-center justify-center p-6 h-32 overflow-hidden" style="background:#ffffff">
+            <img src={logoPng} alt="" aria-hidden="true" class="w-auto" style="height:90px;transform:scale(1.6,0.7)" />
+            <span class="absolute top-2 right-2 flex items-center justify-center w-6 h-6 rounded-full bg-accent text-white text-sm font-bold" aria-hidden="true">✗</span>
+          </div>
+          <figcaption class="px-3 py-2.5 text-sm text-text-light border-t border-border">Ne pas déformer</figcaption>
+        </figure>
+
+        <figure class="rounded-xl border border-border bg-surface shadow-card overflow-hidden">
+          <div class="relative flex items-center justify-center p-6 h-32 overflow-hidden" style="background:#ffffff">
+            <img src={logoPng} alt="" aria-hidden="true" class="h-20 w-auto" style="filter:hue-rotate(120deg) saturate(2.5)" />
+            <span class="absolute top-2 right-2 flex items-center justify-center w-6 h-6 rounded-full bg-accent text-white text-sm font-bold" aria-hidden="true">✗</span>
+          </div>
+          <figcaption class="px-3 py-2.5 text-sm text-text-light border-t border-border">Ne pas recolorer</figcaption>
+        </figure>
+
+        <figure class="rounded-xl border border-border bg-surface shadow-card overflow-hidden">
+          <div class="relative flex items-center justify-center p-6 h-32 overflow-hidden" style="background:#ffffff">
+            <img src={logoPng} alt="" aria-hidden="true" class="h-20 w-auto" style="filter:drop-shadow(5px 7px 3px rgba(0,0,0,0.55))" />
+            <span class="absolute top-2 right-2 flex items-center justify-center w-6 h-6 rounded-full bg-accent text-white text-sm font-bold" aria-hidden="true">✗</span>
+          </div>
+          <figcaption class="px-3 py-2.5 text-sm text-text-light border-t border-border">Pas d’ombre portée</figcaption>
+        </figure>
+
+        <figure class="rounded-xl border border-border bg-surface shadow-card overflow-hidden">
+          <div class="relative flex items-center justify-center p-6 h-32 overflow-hidden" style="background:#ffffff">
+            <img src={logoPng} alt="" aria-hidden="true" class="h-20 w-auto" style="transform:rotate(-15deg)" />
+            <span class="absolute top-2 right-2 flex items-center justify-center w-6 h-6 rounded-full bg-accent text-white text-sm font-bold" aria-hidden="true">✗</span>
+          </div>
+          <figcaption class="px-3 py-2.5 text-sm text-text-light border-t border-border">Ne pas faire pivoter</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Colors -->
+    <section class="mt-16" aria-labelledby="colors-heading">
+      <h2 id="colors-heading" class="text-2xl font-heading font-bold text-primary mb-2">
+        Couleurs
+      </h2>
+      <p class="text-text-light mb-8">
+        Clique sur une couleur pour copier son code hexadécimal.
+      </p>
+
+      <div class="space-y-10">
+        {colorGroups.map((group) => (
+          <div>
+            <h3 class="text-lg font-heading font-semibold text-primary mb-4">
+              {group.title}
+            </h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              {group.colors.map((color) => (
+                <button
+                  type="button"
+                  class="group text-left rounded-xl border border-border overflow-hidden bg-surface shadow-card hover:shadow-card-hover transition-shadow"
+                  data-copy={color.hex}
+                  aria-label={`Copier ${color.hex}`}
+                >
+                  <span
+                    class="block h-24"
+                    style={`background:${color.hex}`}
+                  ></span>
+                  <span class="block p-3">
+                    <span class="block font-medium text-text">{color.name}</span>
+                    <span class="flex items-center gap-1.5 font-mono text-sm text-text-light uppercase">
+                      {color.hex}
+                      <svg class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                      </svg>
+                    </span>
+                    <span class="block mt-1 text-xs text-text-light">{color.usage}</span>
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section class="mt-16" aria-labelledby="typo-heading">
+      <h2 id="typo-heading" class="text-2xl font-heading font-bold text-primary mb-2">
+        Typographie
+      </h2>
+      <p class="text-text-light mb-8">
+        Le logo est composé en <strong class="text-text">Ubuntu</strong>, qui
+        sert aussi de police de titres sur le site. Toutes les polices sont
+        libres et disponibles sur Google Fonts.
+      </p>
+
+      <div class="space-y-4">
+        <div class="rounded-xl border border-border bg-surface shadow-card p-6">
+          <div class="flex items-baseline justify-between gap-4 mb-3">
+            <span class="font-heading font-bold text-primary text-lg">Ubuntu</span>
+            <span class="font-mono text-xs text-text-light uppercase tracking-wide">Logo &amp; titres</span>
+          </div>
+          <p class="text-3xl text-text" style="font-family:'Ubuntu',system-ui,sans-serif;font-weight:700">
+            Toulouse DevOps
+          </p>
+          <p class="mt-1 text-text-light" style="font-family:'Ubuntu',system-ui,sans-serif;font-weight:500">
+            Ubuntu Medium / Bold — AaBbCc 0123
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-border bg-surface shadow-card p-6">
+          <div class="flex items-baseline justify-between gap-4 mb-3">
+            <span class="font-heading font-bold text-primary text-lg">Inter</span>
+            <span class="font-mono text-xs text-text-light uppercase tracking-wide">Corps de texte</span>
+          </div>
+          <p class="text-xl text-text" style="font-family:'Inter',system-ui,sans-serif">
+            La communauté DevOps de Toulouse — AaBbCc 0123456789
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-border bg-surface shadow-card p-6">
+          <div class="flex items-baseline justify-between gap-4 mb-3">
+            <span class="font-heading font-bold text-primary text-lg">JetBrains Mono</span>
+            <span class="font-mono text-xs text-text-light uppercase tracking-wide">Code</span>
+          </div>
+          <p class="text-xl text-text" style="font-family:'JetBrains Mono',ui-monospace,monospace">
+            kubectl apply -f infra/ — AaBbCc 0123
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Name -->
+    <section class="mt-16" aria-labelledby="name-heading">
+      <h2 id="name-heading" class="text-2xl font-heading font-bold text-primary mb-2">
+        Dénomination
+      </h2>
+      <p class="text-text-light">
+        Le nom s’écrit <strong class="text-text">Toulouse DevOps</strong> — avec
+        un D et un O majuscules à « DevOps », et un espace entre les deux mots.
+        À éviter : « Toulouse Devops », « ToulouseDevOps » ou « TLS DevOps ».
+      </p>
+    </section>
+
+    <!-- Back link -->
+    <div class="mt-16">
+      <a
+        href="/"
+        class="inline-flex items-center gap-2 text-primary hover:text-primary-light font-medium transition-colors"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Retour à l’accueil
+      </a>
+    </div>
+  </div>
+
+  <!-- Toast for copy feedback -->
+  <div
+    id="copy-toast"
+    role="status"
+    aria-live="polite"
+    class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-2 rounded-lg shadow-card-hover text-sm font-medium opacity-0 translate-y-2 pointer-events-none transition-all"
+  >
+  </div>
+
+  <script>
+    const toast = document.getElementById('copy-toast');
+    let toastTimer: number | undefined;
+
+    function showToast(message: string) {
+      if (!toast) return;
+      toast.textContent = message;
+      toast.classList.remove('opacity-0', 'translate-y-2');
+      window.clearTimeout(toastTimer);
+      toastTimer = window.setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+      }, 1600);
+    }
+
+    document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const hex = btn.dataset.copy;
+        if (!hex) return;
+        try {
+          await navigator.clipboard.writeText(hex);
+          showToast(`${hex.toUpperCase()} copié`);
+        } catch {
+          showToast('Copie impossible');
+        }
+      });
+    });
+  </script>
+</BaseLayout>
