@@ -21,6 +21,7 @@ export interface Event {
   tags: string[];
   meetupUrl: string;
   status: 'upcoming' | 'past';
+  image?: string;
 }
 
 export interface EventsData {

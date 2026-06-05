@@ -366,6 +366,26 @@
       "tags": ["devsecops", "kubernetes", "security", "pod-security", "opa-gatekeeper"],
       "meetupUrl": "https://www.meetup.com/fr-FR/Toulouse-DevOps/events/293293519/",
       "status": "past"
+    },
+    {
+      "id": "meetup-20",
+      "title": "Sécurité IA & FinOps sous le même maillot",
+      "description": "La reprise des meetups Toulouse DevOps, sous le signe du sport ! Une soirée qui combine sécurité de l'IA et maîtrise des coûts. Seifeddin Mansri (Cloud CTO @ Groupe SFEIR, Google Developer Expert Cloud) présente deux talks : SAIF — Secure AI Framework, pour bâtir une posture de sécurité IA face au prompt injection, data poisoning et Shadow AI, des fondations à la gouvernance ; puis Prompt Optimization & FinOps, pour réduire la facture de vos systèmes d'IA (model routing, prompt caching, diète de prompt). On enchaîne ensuite sur France–Sénégal, premier match de poule des Bleus à la Coupe du Monde 2026 (coup d'envoi à 21h).",
+      "date": "2026-06-16T19:00:00+02:00",
+      "endDate": "2026-06-16T21:00:00+02:00",
+      "location": {
+        "name": "Epitech Toulouse",
+        "address": "40 Boulevard de la Marquette, 31000 Toulouse",
+        "city": "Toulouse"
+      },
+      "talks": [
+        { "title": "SAIF — Secure AI Framework", "speaker": "Seifeddin Mansri (Groupe SFEIR)", "duration": 45 },
+        { "title": "Prompt Optimization & FinOps", "speaker": "Seifeddin Mansri (Groupe SFEIR)", "duration": 45 }
+      ],
+      "tags": ["securite-ia", "finops", "ia", "saif", "prompt-optimization", "cloud"],
+      "meetupUrl": "https://www.meetup.com/toulouse-devops/events/315099030/",
+      "image": "/static/img/events/meetup-20-16juin2026.png",
+      "status": "upcoming"
     }
   ]
 }

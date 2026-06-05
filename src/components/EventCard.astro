@@ -1,4 +1,6 @@
 ---
+import Picture from './Picture.astro';
+
 interface Talk {
   title: string;
   speaker: string;
@@ -22,10 +24,11 @@ interface Props {
   tags: string[];
   meetupUrl: string;
   status: 'upcoming' | 'past';
+  image?: string;
   featured?: boolean;
 }
 
-const { title, description, date, location, talks, tags, meetupUrl, status, featured = false } = Astro.props;
+const { title, description, date, location, talks, tags, meetupUrl, status, image, featured = false } = Astro.props;
 
 const eventDate = new Date(date);
 const formattedDate = eventDate.toLocaleDateString('fr-FR', {
@@ -55,6 +58,19 @@ const isUpcoming = status === 'upcoming';
       </svg>
       Prochain événement
     </div>
+  )}
+
+  {image && (
+    <a href={meetupUrl} target="_blank" rel="noopener noreferrer" class="block">
+      <Picture
+        src={image}
+        alt={`Visuel de l'événement : ${title}`}
+        class="w-full aspect-video object-cover"
+        width={1920}
+        height={1080}
+        loading={featured ? 'eager' : 'lazy'}
+      />
+    </a>
   )}
 
   <div class="p-6">
