@@ -18,13 +18,13 @@ const socialLinks = Object.values(siteData.social);
     </p>
 
     <!-- Social links -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 max-w-4xl mx-auto">
+    <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
       {socialLinks.map((social) => (
         <a
           href={social.url}
           target="_blank"
           rel="noopener noreferrer"
-          class="flex flex-col items-center gap-3 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors group"
+          class="flex flex-col items-center gap-3 p-4 w-32 bg-white/10 rounded-xl hover:bg-white/20 transition-colors group"
         >
           <div class="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 group-hover:bg-white group-hover:text-primary transition-colors">
             <SocialIcon name={social.icon} class="w-6 h-6" />
