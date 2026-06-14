@@ -27,9 +27,9 @@
   "dependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/sitemap": "^3.7.3",
-    "@tailwindcss/vite": "^4.3.0",
-    "astro": "^6.4.4",
-    "tailwindcss": "^4.3.0",
+    "@tailwindcss/vite": "^4.3.1",
+    "astro": "^6.4.6",
+    "tailwindcss": "^4.3.1",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
