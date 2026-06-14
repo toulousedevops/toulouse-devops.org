@@ -116,13 +116,18 @@ const isUpcoming = status === 'upcoming';
 
     <!-- Talks preview -->
     {talks.length > 0 && (
-      <div class="border-t border-gray-100 pt-4 mb-4">
+      <div class="border-t border-border pt-4 mb-4">
         <h4 class="text-sm font-medium text-text mb-2">Au programme :</h4>
         <ul class="space-y-1">
           {talks.map((talk) => (
-            <li class="text-sm text-text-light flex items-start gap-2">
+            <li class="text-sm flex items-start gap-2">
               <span class="text-accent">•</span>
-              <span>{talk.title}</span>
+              <span class="text-text">
+                {talk.title}
+                {talk.speaker && (
+                  <span class="text-text-light"> — {talk.speaker}</span>
+                )}
+              </span>
             </li>
           ))}
         </ul>

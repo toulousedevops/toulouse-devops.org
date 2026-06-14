@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EventCard from '../components/EventCard.astro';
+import eventsData from '../data/events.json';
+import siteData from '../data/site.json';
+import type { Event } from '../types/events';
+
+const events = eventsData.events as Event[];
+
+// Upcoming events, soonest first
+const upcomingEvents = events
+  .filter((e) => e.status === 'upcoming')
+  .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+// Past events, most recent first
+const pastEvents = events
+  .filter((e) => e.status === 'past')
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+// Group past events by year (descending)
+const pastByYear = new Map<number, Event[]>();
+for (const event of pastEvents) {
+  const year = new Date(event.date).getFullYear();
+  if (!pastByYear.has(year)) pastByYear.set(year, []);
+  pastByYear.get(year)!.push(event);
+}
+const pastYears = [...pastByYear.keys()].sort((a, b) => b - a);
+
+// Stats for the intro
+const totalMeetups = events.length;
+const firstYear = Math.min(...events.map((e) => new Date(e.date).getFullYear()));
+---
+
+<BaseLayout
+  title="Tous les événements"
+  description={`Retrouvez l'historique complet des ${totalMeetups} meetups Toulouse DevOps organisés depuis ${firstYear} : talks, ateliers et retours d'expérience autour du DevOps, du cloud et de l'infrastructure.`}
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <!-- Page header -->
+    <div class="mb-12">
+      <a
+        href="/"
+        class="inline-flex items-center gap-2 text-text-light hover:text-primary font-medium transition-colors mb-6"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Retour à l'accueil
+      </a>
+      <h1 class="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">
+        Tous nos événements
+      </h1>
+      <p class="text-text-light text-lg max-w-2xl">
+        {totalMeetups} meetups organisés depuis {firstYear} — talks techniques,
+        ateliers et retours d'expérience. Et toujours des pizzas 🍕
+      </p>
+    </div>
+
+    <!-- Upcoming events -->
+    {upcomingEvents.length > 0 && (
+      <section class="mb-16">
+        <h2 class="text-2xl font-heading font-bold text-primary mb-6 flex items-center gap-2">
+          <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          À venir
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          {upcomingEvents.map((event) => (
+            <EventCard {...event} featured={true} />
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Past events grouped by year -->
+    {pastYears.map((year) => (
+      <section class="mb-16">
+        <h2 class="text-2xl font-heading font-bold text-primary mb-6 flex items-center gap-3">
+          {year}
+          <span class="text-sm font-normal text-text-light">
+            {pastByYear.get(year)!.length} meetup{pastByYear.get(year)!.length > 1 ? 's' : ''}
+          </span>
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          {pastByYear.get(year)!.map((event) => (
+            <EventCard {...event} />
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <!-- CTA -->
+    <div class="text-center mt-4">
+      <a
+        href={siteData.social.meetup.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-primary hover:text-primary-light font-medium transition-colors"
+      >
+        Rejoindre le groupe sur Meetup
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</BaseLayout>
