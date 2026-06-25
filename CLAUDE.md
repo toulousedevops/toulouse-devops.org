@@ -8,7 +8,7 @@ Site web de l'association **Toulouse DevOps**. Nous organisons des rencontres "M
 
 ## Stack technique
 
-- **Framework** : Astro 5
+- **Framework** : Astro 7
 - **CSS** : Tailwind CSS 4 (configuration via `@theme` dans le CSS)
 - **Package manager** : pnpm
 
